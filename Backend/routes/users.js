@@ -8,10 +8,12 @@ const {
   updateUser,
   deleteUser,
   followUser,
-  unfollowUser
+  unfollowUser,
+  topFollowed
 } = require('../controllers/userController');
 
 router.get('/search', searchUsers);
+router.get('/top-followed', topFollowed);
 router.get('/', getUsers);
 router.get('/:id', getUserById);
 router.put('/:id', auth, updateUser);

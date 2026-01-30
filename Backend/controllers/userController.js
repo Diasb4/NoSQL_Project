@@ -88,3 +88,17 @@ exports.unfollowUser = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+// Top followed users (simple aggregation)
+exports.topFollowed = async (req, res) => {
+  try {
+    const top = await User.aggregate([
+      { $project: { username: 1, email: 1, followersCount: { $size: { $ifNull: ['$followers', []] } } } },
+      { $sort: { followersCount: -1 } },
+      { $limit: 20 }
+    ]);
+    res.json(top);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

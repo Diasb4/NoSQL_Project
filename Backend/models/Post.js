@@ -10,4 +10,7 @@ const PostSchema = new mongoose.Schema({
   updatedAt: { type: Date }
 });
 
+// Compound index for faster queries by author and recent posts
+PostSchema.index({ author: 1, createdAt: -1 });
+
 module.exports = mongoose.model('Post', PostSchema);

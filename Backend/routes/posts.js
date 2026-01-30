@@ -9,34 +9,36 @@ const {
   updatePost,
   deletePost,
   likePost,
-  unlikePost
+  unlikePost,
+  stats,
+  deletePostsWithoutLikes
 } = require('../controllers/postController');
 const {
   addComment,
   getCommentsForPost,
   updateComment,
-  deleteComment
+  deleteComment,
+  deleteCommentsByUser
 } = require('../controllers/commentController');
 
-// posts
 router.post('/', auth, createPost);
 router.get('/', getPosts);
+router.get('/stats', stats); // aggregation endpoint
+router.delete('/without-likes', auth, deletePostsWithoutLikes); // admin-only mass-delete posts with no likes
 
-// ⚠️ сначала user
 router.get('/user/:id', getPostsByUser);
 
-// ⚠️ потом id
-router.get('/:id', getPostById);
+router.post('/:postId/comments', auth, addComment);
+router.get('/:postId/comments', getCommentsForPost);
+router.put('/comments/:id', auth, updateComment);
+router.delete('/comments/:id', auth, deleteComment);
+router.delete('/comments/by-user/:id', auth, deleteCommentsByUser);
 
+router.get('/:id', getPostById);
 router.put('/:id', auth, updatePost);
 router.delete('/:id', auth, deletePost);
 router.post('/:id/like', auth, likePost);
 router.post('/:id/unlike', auth, unlikePost);
 
-// comments
-router.post('/:postId/comments', auth, addComment);
-router.get('/:postId/comments', getCommentsForPost);
-router.put('/comments/:id', auth, updateComment);
-router.delete('/comments/:id', auth, deleteComment);
 
 module.exports = router;

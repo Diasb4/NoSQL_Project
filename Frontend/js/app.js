@@ -173,7 +173,7 @@ async function loadUsers(){
   usersList.innerHTML = '';
   res.data.forEach(u => {
     const li = document.createElement('li');
-    li.innerHTML = `<div><strong>${u.username}</strong><div class="small">${u.email}</div></div><div><button data-id="${u._id}" class="btn-follow">Follow</button></div>`;
+    li.innerHTML = `<div><a href="./profile.html?id=${u._id}"><strong>${u.username}</strong></a><div class="small">${u.email}</div></div><div><button data-id="${u._id}" class="btn-follow">Follow</button></div>`;
     usersList.appendChild(li);
   });
 }
@@ -191,7 +191,7 @@ async function performUserSearch(q){
   if(!res.data.length) usersList.innerHTML = '<li class="placeholder">No users found</li>';
   res.data.forEach(u => {
     const li = document.createElement('li');
-    li.innerHTML = `<div><strong>${u.username}</strong><div class="small">${u.email}</div></div><div><button data-id="${u._id}" class="btn-follow">Follow</button></div>`;
+    li.innerHTML = `<div><a href="./profile.html?id=${u._id}"><strong>${u.username}</strong></a><div class="small">${u.email}</div></div><div><button data-id="${u._id}" class="btn-follow">Follow</button></div>`;
     usersList.appendChild(li);
   });
 }
@@ -211,7 +211,7 @@ async function loadPosts(){
 function renderPost(p){
   const el = document.createElement('div'); el.className='post';
   el.innerHTML = `
-    <div class="meta"><div><strong>${p.author?.username||'Unknown'}</strong></div><div class="small">${fmtDate(p.createdAt)}</div></div>
+    <div class="meta"><div><a href="./profile.html?id=${p.author?._id}"><strong>${p.author?.username||'Unknown'}</strong></a></div><div class="small">${fmtDate(p.createdAt)}</div></div>
     <div class="content">${escapeHtml(p.content)} ${p.image?`<div class="small"><img src="${escapeHtml(p.image)}" style="max-width:100%;border-radius:8px;margin-top:8px"/></div>`:''}</div>
     <div class="actions">
       <button class="btn-open" data-id="${p._id}">💬 ${p.commentsCount||0}</button>

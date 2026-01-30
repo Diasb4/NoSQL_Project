@@ -44,12 +44,16 @@ exports.updatePost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
-    if (!post.author.equals(req.user._id)) return res.status(403).json({ message: 'Not authorized' });
-    post.content = req.body.content ?? post.content;
-    post.image = req.body.image ?? post.image;
-    post.updatedAt = Date.now();
-    await post.save();
-    res.json(post);
+    // allow author or admin to update
+    if (!post.author.equals(req.user._id) && req.user.role !== 'admin') return res.status(403).json({ message: 'Not authorized' });
+    // Allow updating multiple fields via $set (whitelist)
+    const allowed = ['content','image'];
+    const toSet = {};
+    allowed.forEach(k => { if (k in req.body) toSet[k] = req.body[k]; });
+    if (Object.keys(toSet).length === 0) return res.status(400).json({ message: 'No valid fields to update' });
+    toSet.updatedAt = Date.now();
+    const updated = await Post.findByIdAndUpdate(req.params.id, { $set: toSet }, { new: true }).populate('author', 'username');
+    res.json(updated);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -59,9 +63,43 @@ exports.deletePost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
-    if (!post.author.equals(req.user._id)) return res.status(403).json({ message: 'Not authorized' });
-    await post.remove();
+
+    // author or admin can delete
+    if (!post.author.equals(req.user._id) && req.user.role !== 'admin')
+      return res.status(403).json({ message: 'Not authorized' });
+
+    // вместо post.remove()
+    await post.deleteOne();
+
     res.json({ message: 'Post deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
+// Aggregation endpoint: stats per user (posts count, avg likes, avg comments)
+exports.stats = async (req, res) => {
+  try {
+    const result = await Post.aggregate([
+      { $project: { author: 1, likesCount: { $size: { $ifNull: ['$likes', []] } }, commentsCount: { $ifNull: ['$commentsCount', 0] } } },
+      { $group: { _id: '$author', posts: { $sum: 1 }, avgLikes: { $avg: '$likesCount' }, avgComments: { $avg: '$commentsCount' } } },
+      { $lookup: { from: 'users', localField: '_id', foreignField: '_id', as: 'user' } },
+      { $unwind: { path: '$user', preserveNullAndEmptyArrays: true } },
+      { $project: { _id: 0, authorId: '$_id', username: '$user.username', posts: 1, avgLikes: { $round: ['$avgLikes', 2] }, avgComments: { $round: ['$avgComments', 2] } } }
+    ]);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// Mass deletion: delete posts without likes (admin-only)
+exports.deletePostsWithoutLikes = async (req, res) => {
+  try {
+    if (req.user.role !== 'admin') return res.status(403).json({ message: 'Admin only' });
+    const r = await Post.deleteMany({ likes: { $size: 0 } });
+    res.json({ deletedCount: r.deletedCount || r.n || 0 });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
