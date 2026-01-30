@@ -11,7 +11,9 @@ const {
   likePost,
   unlikePost,
   stats,
-  deletePostsWithoutLikes
+  deletePostsWithoutLikes,
+  topPosts,
+  bulkUpdate
 } = require('../controllers/postController');
 const {
   addComment,
@@ -23,8 +25,10 @@ const {
 
 router.post('/', auth, createPost);
 router.get('/', getPosts);
+router.get('/top', topPosts);
 router.get('/stats', stats); // aggregation endpoint
 router.delete('/without-likes', auth, deletePostsWithoutLikes); // admin-only mass-delete posts with no likes
+router.put('/bulk-update', auth, bulkUpdate); // admin-only bulk update using $set
 
 router.get('/user/:id', getPostsByUser);
 

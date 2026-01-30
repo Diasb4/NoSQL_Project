@@ -89,6 +89,21 @@ exports.unfollowUser = async (req, res) => {
   }
 };
 
+// Admin: set role for user (admin-only)
+exports.setUserRole = async (req, res) => {
+  try {
+    if (req.user.role !== 'admin') return res.status(403).json({ message: 'Admin only' });
+    const targetId = req.params.id;
+    const role = req.body.role;
+    if (!['user','admin'].includes(role)) return res.status(400).json({ message: 'Invalid role' });
+    const user = await User.findByIdAndUpdate(targetId, { $set: { role } }, { new: true }).select('-password');
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // Top followed users (simple aggregation)
 exports.topFollowed = async (req, res) => {
   try {

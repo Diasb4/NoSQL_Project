@@ -211,7 +211,7 @@ async function loadPosts(){
 function renderPost(p){
   const el = document.createElement('div'); el.className='post';
   el.innerHTML = `
-    <div class="meta"><div><a href="./profile.html?id=${p.author?._id}"><strong>${p.author?.username||'Unknown'}</strong></a></div><div class="small">${fmtDate(p.createdAt)}</div></div>
+    <div class="meta"><div><a href="./profile.html?id=${p.author?._id || p.author}"><strong>${p.author?.username||p.authorSnapshot?.username||'Unknown'}</strong></a></div><div class="small">${fmtDate(p.createdAt)}</div></div>
     <div class="content">${escapeHtml(p.content)} ${p.image?`<div class="small"><img src="${escapeHtml(p.image)}" style="max-width:100%;border-radius:8px;margin-top:8px"/></div>`:''}</div>
     <div class="actions">
       <button class="btn-open" data-id="${p._id}">💬 ${p.commentsCount||0}</button>

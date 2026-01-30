@@ -19,6 +19,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => res.json({ message: 'NoSQL Social Network API' }));
+// Serve static OpenAPI file for documentation
+app.get('/api/docs', (req, res) => res.sendFile(require('path').join(__dirname, 'docs', 'openapi.json')));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);

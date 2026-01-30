@@ -5,8 +5,38 @@ exports.createPost = async (req, res) => {
   try {
     const { content, image } = req.body;
     if (!content) return res.status(400).json({ message: 'Content required' });
-    const post = await Post.create({ author: req.user._id, content, image });
+    const snapshot = { username: req.user.username, email: req.user.email };
+    const post = await Post.create({ author: req.user._id, authorSnapshot: snapshot, content, image });
     res.status(201).json(post);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// Top posts by likes
+exports.topPosts = async (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit || '10', 10);
+    const posts = await Post.aggregate([
+      { $project: { content:1, image:1, author:1, authorSnapshot:1, likesCount: { $size: { $ifNull: ['$likes', []] } }, commentsCount: { $ifNull: ['$commentsCount', 0] }, createdAt:1 } },
+      { $sort: { likesCount: -1 } },
+      { $limit: limit }
+    ]);
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// Mass update with $set (admin-only)
+exports.bulkUpdate = async (req, res) => {
+  try {
+    if (req.user.role !== 'admin') return res.status(403).json({ message: 'Admin only' });
+    const filter = req.body.filter || {};
+    const set = req.body.set || {};
+    if (!Object.keys(set).length) return res.status(400).json({ message: 'Nothing to set' });
+    const r = await Post.updateMany(filter, { $set: set });
+    res.json({ matchedCount: r.matchedCount || r.n, modifiedCount: r.modifiedCount || r.nModified });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

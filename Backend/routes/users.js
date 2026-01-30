@@ -17,6 +17,7 @@ router.get('/top-followed', topFollowed);
 router.get('/', getUsers);
 router.get('/:id', getUserById);
 router.put('/:id', auth, updateUser);
+router.put('/:id/role', auth, setUserRole);
 router.delete('/:id', auth, deleteUser);
 router.post('/:id/follow', auth, followUser);
 router.post('/:id/unfollow', auth, unfollowUser);

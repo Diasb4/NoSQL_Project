@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="topbar"><a href="./index.html">← Back</a><div class="brand">Admin Panel</div></header>
+  <main class="container">
+    <section>
+      <h3>Mass operations</h3>
+      <button id="btnDeleteNoLikes">Delete posts without likes</button>
+      <hr/>
+      <h4>Bulk update posts (admin)</h4>
+      <textarea id="bulkFilter" placeholder='Filter JSON, e.g. {"image":null}' rows="3"></textarea>
+      <textarea id="bulkSet" placeholder='Set JSON, e.g. {"image":""}' rows="2"></textarea>
+      <button id="btnBulkUpdate">Run bulk update</button>
+    </section>
+    <section style="margin-top:20px;">
+      <h3>User role</h3>
+      <input id="roleUserId" placeholder="User ID" />
+      <select id="roleSelect"><option value="user">user</option><option value="admin">admin</option></select>
+      <button id="btnSetRole">Set Role</button>
+    </section>
+    <section style="margin-top:20px;">
+      <h3>Delete comments by user</h3>
+      <input id="delCommentsUserId" placeholder="User ID" />
+      <button id="btnDeleteComments">Delete Comments</button>
+    </section>
+    <section id="adminMsg" style="margin-top:20px;color:green"></section>
+  </main>
+  <script src="./js/admin.js"></script>
+</body>
+</html>

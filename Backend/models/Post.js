@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  // embedded snapshot of author for read-optimizations (example of embedded data)
+  authorSnapshot: {
+    username: { type: String },
+    email: { type: String }
+  },
   content: { type: String, required: true },
   image: { type: String },
   likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
