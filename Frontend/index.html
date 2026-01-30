@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NoSQL Social — Feed</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- favicon: SVG preferred, fallback to PNG if needed -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="./favicon.png" type="image/png" sizes="32x32">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">✕ NoSQL</div>
+    <div class="search"><input id="searchInput" placeholder="Search users..." /></div>
+    <div class="actions">
+      <button id="btnLogin">Log in</button>
+      <button id="btnRegister">Register</button>
+      <button id="btnLogout" style="display:none">Log out</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar-left">
+      <section class="profile-card" id="profileCard">
+        <div class="placeholder">Not signed in</div>
+      </section>
+
+      <section class="users-section">
+        <h3>Suggested</h3>
+        <ul id="usersList"></ul>
+      </section>
+    </aside>
+
+    <section class="feed">
+      <section class="compose">
+        <textarea id="postContent" placeholder="What's happening?" rows="3"></textarea>
+        <div class="compose-controls">
+          <input id="postImage" placeholder="Image URL (optional)" />
+          <button id="btnPost">Post</button>
+        </div>
+      </section>
+
+      <section id="postsFeed"></section>
+    </section>
+
+    <aside class="sidebar-right">
+      <section class="info">
+        <h4>About</h4>
+        <p>This is a simple social feed UI styled like a modern microblog (X-like).</p>
+      </section>
+    </aside>
+  </main>
+
+  <!-- Login / Register Modal -->
+  <div id="modalAuth" class="modal" style="display:none">
+    <div class="modal-content">
+      <h3 id="authTitle">Login</h3>
+      <input id="authUsername" placeholder="Username (register)" />
+      <input id="authEmail" placeholder="Email" />
+      <input id="authPassword" type="password" placeholder="Password" />
+      <div class="modal-actions">
+        <button id="authSubmit">Submit</button>
+        <button id="authCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Details / Comments Modal -->
+  <div id="modalPost" class="modal" style="display:none">
+    <div class="modal-content large" id="postDetails"></div>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <!-- Confirm modal (custom, avoids browser confirm) -->
+  <div id="confirmModal" class="modal" style="display:none">
+    <div class="modal-content">
+      <div id="confirmText">Are you sure?</div>
+      <div class="modal-actions" style="margin-top:12px;">
+        <button id="confirmNo">Cancel</button>
+        <button id="confirmYes" class="btn-primary">Yes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+[
+  {
+    "_id": "697cd088c6c9b641424c281b",
+    "username": "user1",
+    "email": "user1@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c281c",
+    "username": "user2",
+    "email": "user2@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c281d",
+    "username": "user3",
+    "email": "user3@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c281e",
+    "username": "user4",
+    "email": "user4@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c281f",
+    "username": "user5",
+    "email": "user5@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2820",
+    "username": "user6",
+    "email": "user6@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2821",
+    "username": "user7",
+    "email": "user7@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2822",
+    "username": "user8",
+    "email": "user8@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2823",
+    "username": "user9",
+    "email": "user9@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2824",
+    "username": "user10",
+    "email": "user10@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2825",
+    "username": "user11",
+    "email": "user11@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2826",
+    "username": "user12",
+    "email": "user12@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2827",
+    "username": "user13",
+    "email": "user13@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2828",
+    "username": "user14",
+    "email": "user14@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2829",
+    "username": "user15",
+    "email": "user15@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282a",
+    "username": "user16",
+    "email": "user16@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282b",
+    "username": "user17",
+    "email": "user17@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282c",
+    "username": "user18",
+    "email": "user18@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282d",
+    "username": "user19",
+    "email": "user19@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282e",
+    "username": "user20",
+    "email": "user20@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c282f",
+    "username": "user21",
+    "email": "user21@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2830",
+    "username": "user22",
+    "email": "user22@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2831",
+    "username": "user23",
+    "email": "user23@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2832",
+    "username": "user24",
+    "email": "user24@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2833",
+    "username": "user25",
+    "email": "user25@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2834",
+    "username": "user26",
+    "email": "user26@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2835",
+    "username": "user27",
+    "email": "user27@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2836",
+    "username": "user28",
+    "email": "user28@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2837",
+    "username": "user29",
+    "email": "user29@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2838",
+    "username": "user30",
+    "email": "user30@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2839",
+    "username": "user31",
+    "email": "user31@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283a",
+    "username": "user32",
+    "email": "user32@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283b",
+    "username": "user33",
+    "email": "user33@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283c",
+    "username": "user34",
+    "email": "user34@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283d",
+    "username": "user35",
+    "email": "user35@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283e",
+    "username": "user36",
+    "email": "user36@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c283f",
+    "username": "user37",
+    "email": "user37@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2840",
+    "username": "user38",
+    "email": "user38@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2841",
+    "username": "user39",
+    "email": "user39@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2842",
+    "username": "user40",
+    "email": "user40@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2843",
+    "username": "user41",
+    "email": "user41@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2844",
+    "username": "user42",
+    "email": "user42@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2845",
+    "username": "user43",
+    "email": "user43@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2846",
+    "username": "user44",
+    "email": "user44@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2847",
+    "username": "user45",
+    "email": "user45@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2848",
+    "username": "user46",
+    "email": "user46@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c2849",
+    "username": "user47",
+    "email": "user47@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c284a",
+    "username": "user48",
+    "email": "user48@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c284b",
+    "username": "user49",
+    "email": "user49@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  },
+  {
+    "_id": "697cd088c6c9b641424c284c",
+    "username": "user50",
+    "email": "user50@mail.com",
+    "password": "$2b$10$hash",
+    "bio": "Seed user",
+    "followers": [],
+    "following": [],
+    "createdAt": "2026-01-30T15:38:48.292Z"
+  }
+]
