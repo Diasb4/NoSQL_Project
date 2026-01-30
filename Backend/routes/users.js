@@ -9,7 +9,8 @@ const {
   deleteUser,
   followUser,
   unfollowUser,
-  topFollowed
+  topFollowed,
+  setUserRole
 } = require('../controllers/userController');
 
 router.get('/search', searchUsers);

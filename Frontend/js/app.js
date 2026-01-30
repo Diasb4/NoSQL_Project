@@ -163,6 +163,9 @@ async function loadProfile(){
     me = res.data;
     profileCard.innerHTML = `<div><strong>${me.username}</strong><div class="small">${me.email}</div></div>`;
     btnLogout.style.display='inline-block'; btnLogin.style.display='none'; btnRegister.style.display='none';
+    // show admin link when user has admin role
+    const adminLink = document.getElementById('btnAdmin');
+    if (adminLink) adminLink.style.display = (me.role === 'admin') ? 'inline-block' : 'none';
   } else {
     profileCard.innerHTML = `<div class="placeholder">Signed out</div>`;    showToast('Please sign in to access full features', 'info');  }
 }

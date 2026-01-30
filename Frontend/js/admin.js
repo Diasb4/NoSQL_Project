@@ -2,6 +2,19 @@ const API='http://localhost:5000/api';
 const el=(s)=>document.querySelector(s);
 async function apiFetch(path, opts={}){opts.headers=opts.headers||{};const token=localStorage.getItem('token'); if(token) opts.headers['Authorization']=`Bearer ${token}`; const res=await fetch(`${API}${path}`, opts); return {ok:res.ok, status:res.status, data: await res.json().catch(()=>({}))};}
 
+// ensure only admin can use this page - quick guard
+(async function(){
+  const token = localStorage.getItem('token');
+  if(!token){ document.querySelector('main').innerHTML = '<div class="placeholder">Admin page requires login</div>'; return; }
+  try{
+    const res = await fetch(`${API}/auth/me`, { headers: { 'Authorization': `Bearer ${token}` } });
+    if(!res.ok){ document.querySelector('main').innerHTML = '<div class="placeholder">Admin page requires login</div>'; return; }
+    const me = await res.json();
+    if(me.role !== 'admin'){
+      document.querySelector('main').innerHTML = '<div class="placeholder">Access denied: admin only</div>'; return;
+    }
+  }catch(e){ document.querySelector('main').innerHTML = '<div class="placeholder">Auth error</div>'; }
+})();
 el('#btnDeleteNoLikes').onclick=async ()=>{
   const res = await apiFetch('/posts/without-likes', { method:'DELETE' });
   if(!res.ok) return el('#adminMsg').textContent = (res.data&&res.data.message)||'Failed';
